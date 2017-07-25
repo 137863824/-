@@ -1,0 +1,655 @@
+/* 弹出层动画 */
+@keyframes flyUp{
+	from{top: -100%;}
+	to{top: 0;}
+}
+@keyframes flyDown{
+	from{top: 0;}
+	to{top: -100%;}
+}
+html,body{
+    overflow-x: hidden; 
+}
+a{
+    text-decoration:none !important;
+}
+.xiaodao{
+    width: 100%;
+}
+.xiaodao-bg{
+    height: 100%; 
+    width: 100%;
+    position: fixed;
+    z-index: 12;
+    top: 0;  
+    display: none; 
+    background-color: rgba(0, 0, 0,0.5);
+}
+/* 选项卡指示器 */
+.checked{
+    color: #d43c33;
+    background-color: #f5f5f5;
+}
+/* 导航及导航弹出层 */
+.nav-logo{
+    position: fixed;
+    top: 4vw;
+    right: 4.8vw;
+    width: 6vw;
+    z-index: 10;
+    border-radius: 1vw;
+}
+.bg-big{
+    height: 100%; 
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    z-index: 11;
+    top: -100%; 
+}
+.nav-tab{
+    text-align: center;
+    background-color: white;
+    font-size: 4vw;
+    color: #333333;
+}
+.nav-tab>div,.city>div{
+    text-align: right;
+    height: 8vw;
+    line-height: 8vw;
+    padding-right: 4.27vw;
+    color: #666666;
+    border-bottom: 1px solid #ececec;
+}
+.nav-tab>li{
+    display: block;
+    height: 11.73vw;
+    line-height: 11.73vw;
+    border-bottom: 1px solid #ececec;
+}
+.nav-tab>p{
+    height: 11.73vw;
+    line-height: 11.73vw;
+    border-bottom: 1px solid #ececec;
+    color: #d43c33;
+    font-size: 3.47vw;
+}
+/* 城市选择弹出层 */
+.bg-bigcity{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    z-index: 11;
+    top: -100%; 
+}
+.city{
+    height: 68vw;
+    text-align: center;
+    background-color: white;
+    overflow: auto;
+    font-size: 4vw;
+    color: #333333;
+}
+.city>li{
+    display: block;
+    height: 11.73vw;
+    line-height: 11.73vw;
+    border-bottom: 1px solid #ececec;
+}
+/* 外容器 */
+.section{
+    background-size: contain;
+    position: relative;
+    width: 100%;
+    height: 144vw;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* 外容器背景 */
+.bg-1{
+    background-image: url('../imgs/bg-1.jpg')
+}
+.bg-2{
+    background-image: url('../imgs/bg-2.jpg')
+}
+.bg-3{
+    background-image: url('../imgs/bg-3.png')
+}
+/* 首页、楼式总部 */
+/* logo */
+.header{
+    position: absolute;
+    top: 3.47vw;
+    left: 4vw;
+}
+.header>img:nth-of-type(1){
+    width: 13vw;
+}
+/* 地址 */
+.address{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    margin-left: 4vw;
+    position: relative;
+    top: -2vw;
+    font-size: 4vw;
+}
+.address>img{
+    margin-left: 0.5vw;
+    width: 2.47vw;
+}
+/* 内容器 */
+.content{
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+.content-1{
+    width: 84vw;
+    height: 65.87vw; 
+}
+.content-2{
+    width: 84.375vw;
+    height: 77.33vw; 
+}
+.top-text{
+    font-size: 8vw;
+    font-weight: 700;
+    margin-bottom: 3vw;
+}
+.bottom-text{
+    font-size: 4.8vw;
+    position: absolute;
+    bottom: 0;
+    font-weight: 500;
+}
+.left-text{
+    text-align: left;
+}
+.spot{
+    display: inline-block;
+    position: relative;
+    top: -1vw; 
+    margin: 2vw 1.6vw 0 1.6vw;
+}
+.bottom-text-2{
+    font-size: 4.27vw; 
+}
+.bottom-text-2>span{
+    display: inline-block;
+    margin-top: 4vw;
+}
+/* 各地楼事 */
+.device-box{
+    margin-top: 5.33vw;
+    height: 154.67vw;
+    position: relative;
+    padding: 0 8vw;
+}
+.device{
+    width: 100vw;
+    height: 154.67vw;
+    text-align: left !important;
+} 
+.swiper-button-next,.swiper-button-prev{
+     width: 2.13vw !important; 
+     height: 5vw !important; 
+     background-size: contain !important;
+}
+/* 各地楼事城市背景 */
+.each-city{
+    width: 84vw;
+    height: 42.67vw;
+    margin-bottom: 4.8vw;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.city-name{
+    width: 62vw;
+    height: 8.67vw;
+    font-size: 8.67vw;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.city-name>span{
+    display: inline-block;
+}
+.city-name>span:nth-child(2){
+    width: 2px;
+    height: 7vw;
+    background-color: white;
+}
+.nanjing .each-city{
+    background-image: url('../imgs/nanjing/nanjing.png')
+} 
+.shanghai .each-city{
+    background-image: url('../imgs/shanghai/shanghai.png')
+} 
+.hefei .each-city{
+    background-image: url('../imgs/hefei/hefei.png')
+} 
+.wuhan .each-city{
+    background-image: url('../imgs/wuhan/wuhan.png')
+} 
+.jinan .each-city{
+    background-image: url('../imgs/shenyang/shenyang.png')
+} 
+.shenyang .each-city{
+    background-image: url('../imgs/shenyang/shenyang.png')
+} 
+.shijiazhuang .each-city{
+    background-image: url('../imgs/shijiazhuang/shijiazhuang.png')
+} 
+.suzhou .each-city{
+    background-image: url('../imgs/suzhou/suzhou.png')
+} 
+.xuzhou .each-city{
+    background-image: url('../imgs/xuzhou/xuzhou.png')
+} 
+.wuxi .each-city{
+    background-image: url('../imgs/wuxi/wuxi.png')
+} 
+.changzhou .each-city{
+    background-image: url('../imgs/changzhou/changzhou.png')
+}
+/* 各地楼事选项卡 */
+.tabs{
+    width: 84vw;
+    height: 3.73vw;
+    display: flex;
+    justify-content: space-around;
+    color: #979899;
+    font-size: 3.73vw;
+    border-bottom: 2px solid #d4d4d4; 
+    padding-bottom: 2vw; 
+    position: relative;
+}
+.tab-cursor{
+    background-color: #e55d43;
+    position: absolute;
+    height: 2px;
+    top: 5.73vw;
+}
+.meiyou{
+    visibility: hidden; 
+}
+/* 各地楼事具体新闻 */
+.tabs-content{
+     position: absolute; 
+}
+.tabs-content>a:nth-of-type(1)>div{
+    margin: 4vw 0;
+}
+.tabs-content div{
+    width: 84vw;
+    height: 42.67vw;
+    background-size: cover;
+    position: relative;
+}
+.tabs-content>a>div>p{
+    font-size: 3.47vw;
+    color: rgb(255, 255, 255);
+    background-color: rgba(153, 153, 153,0.8);
+    opacity: 0.5;
+    padding: 2vw;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0; 
+}
+.nanjing-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/nanjing/nj_01.png')
+}
+.nanjing-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/nanjing/nj_02.png')
+}
+.nanjing-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/nanjing/nj_03.png');
+}
+.nanjing-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/nanjing/nj_04.png');
+}
+.nanjing-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/nanjing/nj_05.png')
+}
+.nanjing-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/nanjing/nj_06.png')
+}
+.shanghai-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/shanghai/sh_01.png')
+}
+.shanghai-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/shanghai/sh_02.png')
+}
+.hefei-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/hefei/hf_01.png')
+}
+.hefei-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/hefei/hf_02.png')
+}
+.hefei-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/hefei/hf_03.png')
+}
+.hefei-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/hefei/hf_04.png')
+}
+.hefei-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/hefei/hf_05.png')
+}
+.hefei-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/hefei/hf_06.png')
+}
+.wuhan-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/wuhan/wh_01.png')
+}
+.wuhan-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/wuhan/wh_02.png')
+}
+.wuhan-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/wuhan/wh_03.png')
+}
+.wuhan-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/wuhan/wh_04.png')
+}
+
+.jinan-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/jinan/jn_01.png')
+}
+.jinan-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/jinan/jn_02.png')
+}
+.jinan-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/jinan/jn_03.png')
+}
+.jinan-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/jinan/jn_04.png')
+}
+.shenyang-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/shenyang/sy_01.png')
+}
+.shenyang-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/shenyang/sy_02.png')
+}
+.shenyang-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/shenyang/sy_03.png')
+}
+.shenyang-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/shenyang/sy_04.png')
+}
+.shijiazhuang-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/shijiazhuang/sjz_01.png')
+}
+.shijiazhuang-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/shijiazhuang/sjz_02.png')
+}
+.suzhou-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/suzhou/sz_01.png')
+}
+.suzhou-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/suzhou/sz_02.png')
+}
+.suzhou-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/suzhou/sz_03.png')
+}
+.suzhou-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/suzhou/sz_04.png')
+}
+.suzhou-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/suzhou/sz_05.png')
+}
+.suzhou-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/suzhou/sz_06.png')
+}
+
+.xuzhou-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/xuzhou/xz_01.png')
+}
+.xuzhou-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/xuzhou/xz_02.png')
+}
+.xuzhou-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/xuzhou/xz_03.png')
+}
+.xuzhou-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/xuzhou/xz_04.png')
+}
+.xuzhou-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/xuzhou/xz_05.png')
+}
+.xuzhou-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/xuzhou/xz_06.png')
+}
+.wuxi-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/wuxi/wx_01.png')
+}
+.wuxi-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/wuxi/wx_02.png')
+}
+.wuxi-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/wuxi/wx_03.png')
+}
+.wuxi-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/wuxi/wx_04.png')
+}
+.wuxi-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/wuxi/wx_05.png')
+}
+.wuxi-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/wuxi/wx_06.png')
+}
+.changzhou-1>a:nth-of-type(1)>div{
+    background-image: url('../imgs/changzhou/cz_01.png')
+}
+.changzhou-1>a:nth-of-type(2)>div{
+    background-image: url('../imgs/changzhou/cz_02.png')
+}
+.changzhou-2>a:nth-of-type(1)>div{
+    background-image: url('../imgs/changzhou/cz_03.png')
+}
+.changzhou-2>a:nth-of-type(2)>div{
+    background-image: url('../imgs/changzhou/cz_04.png')
+}
+.changzhou-3>a:nth-of-type(1)>div{
+    background-image: url('../imgs/changzhou/cz_05.png')
+}
+.changzhou-3>a:nth-of-type(2)>div{
+    background-image: url('../imgs/changzhou/cz_06.png')
+}
+/* 旗下品牌 */
+.content-3{
+    height: 117.33vw;
+    width: 84vw;
+}
+.content-3>p{
+    margin: 13.33vw auto 6vw auto;
+    font-size: 5.33vw;
+}
+.brand>img{
+    width: 28.67vw;
+    margin: 2vw 2.67vw;
+}
+/* 解决方案 */
+.media-more>p{
+    font-size: 4vw;
+    font-weight: 700;
+}
+.media-serve{
+    text-align: center;
+    height: 154.93vw;
+}
+.media-serve>p{
+    margin: 13.33vw auto 5.33vw auto;
+    font-size: 5.33vw;
+    color: black;
+}
+.media-logo{
+    margin-bottom: 4vw;
+}
+.media-logo>img:nth-child(odd){
+    width: 20.93vw;
+}
+.media-logo>img:nth-child(even){
+    width: 2vw;
+    margin: auto 2vw;
+    position: relative;
+    top: -12vw;
+}
+.media-logo>div:nth-of-type(1){
+    background-image: url('../imgs')
+}
+.media-more{
+    height: 88vw;
+}
+.media-more>img{
+    width: 57.87vw; 
+}
+.media-more>p{
+    margin: 4vw auto;
+    color: rgb(51, 51, 51);
+}
+.media-more>img:nth-of-type(2){
+    margin: 2vw auto;
+}
+/* 联系我们 */
+.contact{
+    height: 211.33vw;
+    background-image: url('../imgs/bg-4.jpg');
+    background-size: contain;
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.contact-content{
+    width: 84vw;
+    height: 190vw;
+    background-color: rgba(237, 234, 233,0.8);
+}
+.contact-content>p{
+    font-size: 5.33vw;
+    margin: 10.67vw auto 5.33vw auto;
+}
+/* 联系我们选项卡 */
+.contact-tab{
+    width: 73.33vw;
+    height: 8vw;
+    text-align: center; 
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.contact-tab>div{
+    width: 1000px;
+}
+.contact-tab p{
+    height: 8vw;
+    width: 16vw;
+    line-height: 8vw;
+    display: inline-block;
+    background-color: rgb(151, 152, 153);
+    color: white;
+    margin: 0.1vw;
+}
+.swiper-container-2 {
+    width: 100%;
+    height: 8vw;
+    overflow: hidden;
+}
+.swiper-container-2 .swiper-slide {
+    text-align: center;
+    font-size: 3.4vw;
+    background: rgb(151, 152, 153);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 84vw;
+    height: 8vw;
+}
+/* 选项卡具体内容 */
+.contact-text{
+    text-align: left;
+    width: 73.33vw;
+    margin: 4vw auto 5.33vw auto;
+}
+.contact-text p{
+    padding: 1vw;
+}
+.contact-text>img{
+    width: 73.33vw;
+    margin: 3vw 0 5.67vw 0;
+}
+.contact-text>p{
+    font-size: 3.73vw;
+    color: #333333;
+}
+.contact-text>p:nth-last-of-type(){
+    margin-bottom: 2vw;
+}
+.contact-text>div:nth-of-type(1)>p{
+    font-size: 3.47vw;
+    color: #666666;
+}
+.contact-text>div:nth-of-type(2)>p:nth-of-type(1){
+    font-size: 3.73vw;
+    color: #333333;
+}
+.contact-text>div:nth-of-type(2)>p:nth-of-type(2){
+    font-size: 3.2vw;
+    color: #333333;
+    margin-bottom: 3vw;
+}
+.contact-text>ul>a>li{
+    font-size: 3.47vw;
+    color: #666666;
+    margin-bottom: 2vw;
+}
+.contact-text>ul{
+    list-style-type: disc;
+}
+/* 底部二维码 */
+.erweima{
+    margin-top: 5.33vw;
+    text-align: center;
+}
+.erweima>img{
+    width: 20vw;
+}
+.erweima>img:nth-of-type(1){
+    margin-right: 2.67vw;
+}
+.erweima>img:nth-of-type(2){
+    margin-left: 2.67vw;
+}
+.erweima-name{
+    margin-top: 1.87vw;
+    text-align: center;
+    font-size: 3.2vw;
+    color: #333333;
+}
+.erweima-name>p{
+    display: inline-block;
+}
+.erweima-name>p:nth-of-type(1){
+    margin-right: 5.5vw;
+}
+.erweima-name>p:nth-of-type(2){
+    margin-left: 5.5vw;
+}
+.erweima-sy>img{
+    margin: 0 !important;
+}
+.erweima-sy-name>p{
+    margin: 0 !important;
+}
+
+
+
