@@ -34,3 +34,8 @@ http://www.gruntjs.net/   请参考官网 （中文）
 	grunt uglify  执行文件压缩任务
 	grunt watch  执行文件监视任务
 	grunt         执行默认的default任务
+
+### 该示例中安装的局部模块包为
+grunt
+grunt-contrib-cssmin
+grunt-contrib-uglify

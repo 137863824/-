@@ -1,0 +1,24 @@
+{
+  "name": "third-party-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/137863824/Third-party-Library.git"
+  },
+  "author": "cak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/137863824/Third-party-Library/issues"
+  },
+  "homepage": "https://github.com/137863824/Third-party-Library#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-uglify": "^3.0.1"
+  }
+}
